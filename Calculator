@@ -1,0 +1,46 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
+}
+.span-4 {
+  grid-column: span 4;
+}
+.span-2 {
+  grid-column: span 2;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(https://studentresearch.engineering.columbia.edu/sites/default/files/styles/cu_crop/public/2017-01/math4.jpg?itok=u1bkQxYEs);
+}
+.result {
+  word-break: break-all;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  word-wrap: break-word;
+}
+.result .Primary {
+  color: black;
+  font-size: 3rem;
+}
+.calc {
+  min-height: 99vh;
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  align-content: center;
+  grid-template-rows: repeat(5, 99px) minmax(100px, auto) ;
+  justify-content: center;
+}
+.calc > button {
+  background-color: #ccccb3;
+  outline: none;
+  font-size: 3.5rem;
+}
+.calc > button:hover {
+  background-color: #ccffff;
+}
