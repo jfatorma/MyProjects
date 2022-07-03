@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>project7</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="CSE111 project 6 webpage about myself">
+  <meta name="keywords" content="HTML, CSS">
+  <meta name="author" content="James Fatorma">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .button{
+      background-color: #ff9a9e;
+      color: black;
+      padding: 40px 15px;
+      text-align: center;
+      font-size: 20px;
+      margin: 4px 4px;
+      border-radius: 50%;
+      box-shadow: 0 10px #999;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      justify-content: center;}
+    .button:hover {background-color: #ff0000}
+    .button:active {
+      background-color: #ff0000 ;
+      box-shadow: 0 5px #666;
+      transform: translateY(10px);}
+
+      table, th, td {border: 1px solid black;}
+      #food {width: 100%;background-color: #f1f1c1;}
+      body {background-color: #87CEEB;}
+
+      .header {
+        border: 20px outset red;
+        text-align: center;
+        background-color: #ffe78b;
+        border-radius: 35px;
+      }
+
+      .AB {
+        border: 20px outset purple;
+        text-align: center;
+        background-color: #ffe78b;
+        border-radius: 35px;
+      }
+
+      .hobbies {
+        border: 20px outset white;
+        text-align: center;
+        background-color: #ffe78b;
+        border-radius: 35px;
+      }
+
+      .links {
+        border: 20px outset blue;
+        background-color: #ffe78b;
+        text-align: center;
+        border-radius: 35px;
+      }
+
+      .white-img {
+        border: 25px solid white;
+        border-radius: 50%;
+        text-align: center;
+      }
+
+      .food {
+        border: 20px outset orange;
+        border-radius: 35px;
+        text-align: center;
+        background-color: #ffe78b;
+      }
+
+      /* unvisisted link */
+      a:link {color: blue}
+      /* visited link */
+      a:visited {color: blue}
+      /* mouse over link */
+      a:hover {color: white}
+      /* selected link */
+      a:active {color: white}
+  </style>
+</head>
+
+<body>
+  <div class="header">
+  <h1 align="center">WELCOME</h1>
+  <input type="button" class="button" onclick="myfunction()" value="Overview">
+  </div>
+  <script>
+function myfunction() {
+  alert("Welcome to my webpage where you'll learn some aspects about myself like my major, hobbies, and favorite foods.")
+}
+  </script>
+</body>
+
+<br>
+<br>
+<br>
+
+<body>
+  <div class="AB">
+  <h1 align="center">ABOUT ME</h1>
+
+    <button class="button" onclick="myFunction()" >Find Out More</button>
+
+    <p style="font-size:30px" id="myh1"></p>
+
+    <script>
+    function myFunction() {
+      var str = "Welcome, my name is <b>James Fatorma</b>. I was born on February 9th which makes me an Aquarius, the best sign by the way, in the year 2002. I was born in Manhasset New York, but grew up in Queens NYC my whole life. I am the middle child with two sisters in a house of all women. My oldest sister also attends <i>UBuffalo</i> which influenced my decision to enroll here. I am currently majoring in Computer Science with interest in exploring the field of Machine Learning or Data Science.";
+      document.getElementById("myh1").innerHTML = str;
+    }
+    </script>
+  </div>
+</body>
+
+<br>
+<br>
+<br>
+
+<body>
+  <div class="hobbies">
+  <h2 style="font-size:30px;" align="center";>HOBBIES</h2>
+  <p style="font-size:30px">During my free time I like to play video games on my PS4, or watch shows on my TV. I mostly watch shows on streaming services like Netflix, and only use cable for background noise when I am on my phone or laptop. It's hard for me to pick only one favorite show mainly because of the amount of shows that I watch and enjoy. The same thing goes with video games. There are some days where I feel more inclined to play one game over the other. Another one of my favorite hobbies is watching and keeping up with sports. The sports that I love the most are Basketball, Football, and Soccer. Being from New York makes me a diehard <b>Knicks</b> and <b>Giants</b> fan. My favorite soccer team is <b>Everton F.C.</b>, a football(soccer) club based in England Europe. These teams have been struggling to win over the last few years but being the fan that I am, I always see the bright side...sometimes.</p>
+
+  <img src="https://th.bing.com/th/id/OIP.IdR99tS2nxOX_tgHAddW_wHaEo?w=279&h=180&c=7&o=5&dpr=1.25&pid=1.7.jpeg" id="myImg" width="450" height="400" class="white-img">
+<br>
+ <input type="button" class="button" onclick="changeImage()" value="Change Image" />
+
+  <script>
+  function changeImage() {
+    var image = document.getElementById('myImg');
+    if (image.src.match("https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/giants/n9zjm3fgyhqlkv4b6m1f.jpeg")) {
+      image.src = "https://lbndaily.co.uk/wp-content/uploads/2017/12/Attachment-1-34.jpeg";
+    }
+    else if (image.src.match("https://lbndaily.co.uk/wp-content/uploads/2017/12/Attachment-1-34.jpeg")) {
+    image.src = "https://th.bing.com/th/id/OIP.IdR99tS2nxOX_tgHAddW_wHaEo?w=279&h=180&c=7&o=5&dpr=1.25&pid=1.7.jpeg";
+    }
+    else { image.src = "https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/giants/n9zjm3fgyhqlkv4b6m1f.jpeg";
+    }
+}
+  </script>
+</div>
+</body>
+
+<br>
+<br>
+<br>
+<hr size=3 color=red>
+<body>
+  <div class="links">
+  <p style="font-size:25px; font:verdana; color:red;"><i>Here is the CSE 111 website where you can find all of the course assignments and material~</i><a href="https://cse.buffalo.edu/~kds/cse-111/">CSE 111 Course Website</a></p>
+  <p style="font-size:25px; font:verdana; color:red;"><i>To contact me my UB email is jfatorma@buffalo.edu~</i><a href="mailto:jfatorma@buffalo.edu">SEND EMAIL</a></p>
+</div>
+</body>
+
+<hr size=3 color=red>
+<br>
+<br>
+<br>
+
+<body>
+  <div class="food">
+  <h3 style="font-size:30px;" align="center";>FOOD</h3>
+  <p style="font-size:30px" id="myp">My favorite food is between Pizza and a Bacon Cheeseburger. I eat these foods about 2 times a month which somehow makes them taste better in my eyes. My favorite desert or sweet food is cheesecake as well as donuts. I also love ice cream, with my favorite flavor being cookie dough. My favorite restaurant is The Cheesecake Factory, mainly because of there broad menu options of foods and deserts.</p>
+
+    <button class="button" onclick="Myfunction()">Change Text Color To Orange</button>
+    <script>
+    function Myfunction() {
+      var text = document.getElementById("myp").innerHTML;
+      document.getElementById("myp").innerHTML = text.fontcolor("#ff6600")
+    }
+    </script>
+</body>
+
+<br>
+<br>
+<br>
+
+<body>
+  <h4 align="center" style="font-size:30px;">Favorite Foods</h4>
+<table id="food"; style="width:100%">
+<tr>
+  <th>Favorite Food</th>
+  <th>Flavor/Topping</th>
+</tr>
+<tr>
+  <th>Pizza</th>
+  <th>Pepperoni</th>
+</tr>
+<tr>
+  <th>Cheeseburger</th>
+  <th>Bacon</th>
+</tr>
+<tr>
+  <th>Cheesecake</th>
+  <th>Red Velvet</th>
+</tr>
+<tr>
+  <th>Donuts</th>
+  <th>Glazed</th>
+</tr>
+<tr>
+  <th>Ice Cream</th>
+  <th>Cookie Dough</th>
+</tr>
+</div>
+</body>
+</html>
