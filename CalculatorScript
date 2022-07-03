@@ -1,0 +1,80 @@
+class calc {
+  constructor(IntoTextElement, PriOTextElement) {
+    this.PriOTextElement = PriOTextElement
+    this.CLEAR()}
+  CLEAR() {
+    this.PriO = ''
+    this.operation = undefined}
+  appendNumber(number) {
+    if (number === '.' && this.PriO.includes('.')) return
+    this.PriO = this.PriO.toString() + number.toString()}
+  chooseOperation(operation) {
+    if (this.PriO === '') return
+    if (this.Into !== '') {
+      this.compute()}
+    this.operation = operation
+    this.Into = this.PriO
+    this.PriO = ''}
+  compute() {
+    let computation
+    const prev = parseFloat(this.Into)
+    const Primary = parseFloat(this.PriO)
+    if (isNaN(prev) || isNaN(Primary)) return
+    switch (this.operation) {
+      case '+':
+        computation = prev + Primary
+        break
+      case '-':
+        computation = prev - Primary
+        break
+      case '*':
+        computation = prev * Primary
+        break
+      case '÷':
+        computation = prev / Primary
+        break
+      default:
+        return}
+    this.PriO = computation
+    this.operation = undefined}
+  getscreen(number) {
+    const stringNumber = number.toString()
+    const input2 = parseFloat(stringNumber.split('.')[0])
+    const input = stringNumber.split('.')[1]
+    let totalscreen
+    if (isNaN(input2)) {
+      totalscreen = ''
+    } else {
+      totalscreen = input2.toLocaleString('en', { maximumFractionDigits: 0 })
+    }
+    if (input != null) {
+      return `${totalscreen}.${input}`
+    } else {
+      return totalscreen}}
+  updatescreen() {
+    this.PriOTextElement.innerText =
+      this.getscreen(this.PriO)
+    if (this.operation != null) {
+      this.IntoTextElement.innerText =
+        `${this.getscreen(this.Into)} ${this.operation}`}}}
+const NumberB = document.querySelectorAll('[Number]')
+const SignB = document.querySelectorAll('[Sign]')
+const EQLB = document.querySelector('[EQL]')
+const ACB = document.querySelector('[AC]')
+const IntoTextElement = document.querySelector('[INT]')
+const PriOTextElement = document.querySelector('[PRI]')
+const CA = new calc(IntoTextElement, PriOTextElement)
+NumberB.forEach(button => {
+  button.addEventListener('click', () => {
+    CA.appendNumber(button.innerText)
+    CA.updatescreen()})})
+SignB.forEach(button => {
+  button.addEventListener('click', () => {
+    CA.chooseOperation(button.innerText)
+    CA.updatescreen()})})
+EQLB.addEventListener('click', button => {
+  CA.compute()
+  CA.updatescreen()})
+ACB.addEventListener('click', button => {
+  CA.CLEAR()
+  CA.updatescreen()})
